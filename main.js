@@ -4,10 +4,15 @@ const express = require("express");
 const app = express();
 const PORT = 2000;
 
+// retrieving information
 app.get("/", (req, res) => {
     res.send("Hello, world");
 });
 
+app.get("/article/", (req, res) => {
+    res.send("This is articles page");
+});
+//
 app.listen(PORT, () => {
-    console.log("Just trying express on port" + PORT);
+    console.log("Just trying express on port " + PORT);
 });
