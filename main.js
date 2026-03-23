@@ -16,3 +16,7 @@ app.get("/article/", (req, res) => {
 app.listen(PORT, () => {
     console.log("Just trying express on port " + PORT);
 });
+
+app.get("/metal", (_, res) => {
+    res.sendStatus(500).send("File not found");
+});
