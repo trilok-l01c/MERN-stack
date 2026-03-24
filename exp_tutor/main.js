@@ -17,6 +17,9 @@ app.listen(PORT, () => {
     console.log("Just trying express on port " + PORT);
 });
 
+
 app.get("/metal", (_, res) => {
     res.sendStatus(500).send("File not found");
 });
+
+// ## sendStatus() helps us to inform the user about the status of network
