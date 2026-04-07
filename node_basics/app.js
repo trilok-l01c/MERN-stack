@@ -18,5 +18,16 @@ const server = http.createServer((req, res) => {
 const Port = 3000;
 
 server.listen(Port, () => {
-    console.log("I am listening you at port:", Port);
+    console.log("I am listening you at port: http://localhost:" + Port);
 });
+
+const getName = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Resolved successfully"), 2000);
+        reject("Failed");
+    });
+};
+
+getName()
+    .then((v) => console.log("resolved", v))
+    .catch((e) => console.error("error", e));
