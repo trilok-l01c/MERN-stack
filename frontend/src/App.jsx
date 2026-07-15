@@ -5,10 +5,9 @@ function App() {
     const [count, setCount] = useState(0);
 
     return (
-        <>
+        <div className="App">
             <h3>See what server is sending here</h3>
-            <p></p>
-        </>
+        </div>
     );
 }
 
