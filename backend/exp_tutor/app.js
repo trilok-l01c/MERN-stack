@@ -2,8 +2,22 @@
 const express = require("express");
 const app = express();
 
-app.get("/", (_, res) => {
-    res.send("Welcome to our services page!");
+// a security mechanism
+const cors = require("cors");
+
+const corsOptions = {
+    origin: "http://localhost:5173",
+    optionsSuccessStatus: 200,
+};
+
+// syntax to use middlewares
+// this will allow only specific domain to make request
+
+app.use(cors(corsOptions));
+
+// routes
+app.get("/api/data", (_, res) => {
+    res.json({ message: "Hello, world" });
 });
 
 app.get("/web", (_, res) => {
