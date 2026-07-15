@@ -8,15 +8,26 @@
 }
 
 button {
-    width: 100px;
-    height: 30px;
-    font-size: 18px;
+    width: 120px;
+    height: 38px;
+    font-size: 16px;
     font-weight: 600;
+    color: #333;
     background-color: bisque;
-    box-shadow: rgb(37, 97, 149) 2px 3px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgb(212, 189, 95) 2px 3px;
+    cursor: pointer;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
 }
 
-button:hover,
+button:hover {
+    transform: translateY(-2px);
+}
+
 button:active {
-    box-shadow: 0;
+    box-shadow: transparent 0 0;
+    transform: translateY(1px);
 }
