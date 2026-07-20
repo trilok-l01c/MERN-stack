@@ -5,6 +5,10 @@ const app = express();
 // a security mechanism
 const cors = require("cors");
 
+// colors for fun
+
+const colors = ["#53d860", "#d7d356", "#903939", "#e3a283"];
+const colorLen = colors.length;
 const corsOptions = {
     origin: "http://localhost:5173",
     optionsSuccessStatus: 200,
@@ -17,7 +21,10 @@ app.use(cors(corsOptions));
 
 // routes
 app.get("/api/data", (_, res) => {
-    res.json({ message: "Hello, world" });
+    res.json({
+        message: "Hello, world",
+        color: colors[Math.floor(Math.random() * colorLen)],
+    });
 });
 
 app.get("/web", (_, res) => {
