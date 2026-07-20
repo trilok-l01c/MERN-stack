@@ -8,6 +8,19 @@ const cors = require("cors");
 // colors for fun
 
 const colors = ["#53d860", "#d7d356", "#903939", "#e3a283"];
+const messages = [
+    "How are you?",
+    "Boom!",
+    "Dr. Doom is here!",
+    "Avengers, ASSEMBLE!",
+    "Spiderman is back",
+    "Hare Krsna",
+    "Govinda!",
+    "Kanha",
+    "Radharaman",
+    "Bankebihari",
+];
+const msgLen = messages.length;
 const colorLen = colors.length;
 const corsOptions = {
     origin: "http://localhost:5173",
@@ -22,7 +35,7 @@ app.use(cors(corsOptions));
 // routes
 app.get("/api/data", (_, res) => {
     res.json({
-        message: "Hello, world",
+        message: messages[Math.floor(Math.random() * msgLen)],
         color: colors[Math.floor(Math.random() * colorLen)],
     });
 });
