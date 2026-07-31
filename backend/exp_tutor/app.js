@@ -1,13 +1,19 @@
 // write your code here.
 const express = require("express");
 const app = express();
+const cors = require("cors");
+
+// allowing requests from every domain
+app.use(cors);
 
 app.get("/", (_, res) => {
     res.send("Welcome to our services page!");
 });
 
-app.get("/web", (_, res) => {
-    res.send("We specialize in Web Development.");
+app.get("/data", (_, res) => {
+    res.json({
+        message: "Hare, Krsna",
+    });
 });
 
 app.get("/mobile", (_, res) => {
